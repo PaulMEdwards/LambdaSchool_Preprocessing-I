@@ -134,3 +134,140 @@ html,
 body {
   height: 100%;
 }
+body {
+  width: 100%;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.5rem;
+  padding: 3rem 5rem;
+  padding-bottom: 0;
+}
+h1 {
+  margin: 0.5em 0;
+  font-size: 2.5em;
+}
+h1 #title {
+  font-size: 3em;
+}
+h2 {
+  margin: 0.35em 0;
+  font-size: 2em;
+}
+h3 {
+  margin: 0.25em 0;
+  font-size: 1.75em;
+}
+h4 {
+  margin: 0.15em 0;
+  font-size: 1.5em;
+}
+h5 {
+  margin: 0.1em 0;
+  font-size: 1.25em;
+}
+h6 {
+  margin: 0.05em 0;
+  font-size: 1em;
+}
+a {
+  text-decoration: none;
+  font-size: 1.25em;
+  font-weight: bold;
+  color: black;
+}
+p {
+  line-height: 1.5em;
+  font-weight: bold;
+}
+hr {
+  margin: 1.5em 0;
+}
+nav {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  align-content: flex-end;
+  justify-content: flex-end;
+}
+nav div {
+  width: 40%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  align-content: flex-end;
+}
+section {
+  width: 100%;
+  margin: 2em 0;
+}
+section#top {
+  padding: 2em;
+  background-color: #e8ebee;
+  border-radius: 7.5px;
+}
+section#top img {
+  width: 100%;
+}
+section#top button {
+  margin-top: 1em;
+  margin-bottom: 1.5em;
+  padding: 0.5em;
+  background-color: gray;
+  color: white;
+  font-size: 1.5em;
+  border-radius: 7.5px;
+}
+section#mid {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  align-content: space-between;
+}
+section#mid div {
+  width: 48%;
+}
+section#mid div#items {
+  width: 100%;
+  border: 1px solid #dedede;
+  border-radius: 7.5px;
+}
+section#mid div#items .item {
+  width: 100%;
+  border-bottom: 1px solid #dedede;
+  padding: 1em;
+}
+section#mid div#items .item:last-child {
+  border-bottom: none;
+}
+section#history table {
+  width: 100%;
+  line-height: 2em;
+  border-top: 1px solid #dedede;
+}
+section#history table tr:first-child {
+  font-weight: bold;
+}
+section#history table tr td:first-child {
+  font-weight: bold;
+}
+section#history table tr td {
+  padding: 0.5em;
+}
+section#history table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+footer {
+  height: 5em;
+  padding-top: 1em;
+  text-align: center;
+  background-color: gray;
+  font-size: 1em;
+  font-weight: bold;
+  color: white;
+}
