@@ -160,13 +160,18 @@ html, body {
   .flex.align-content.flex-end();
 }
 
-.flexMid() {
+.flexNavSmall() {
   .flex();
-  .flex.direction.row();
+  .flex.direction.column();
   .flex.wrap.wrap();
   .flex.align-items.flex-start();
   .flex.justify-content.space-between();
-  .flex.align-content.space-between();
+  .flex.align-content.center();
+}
+
+.flexMid() {
+  .flex.wrap.wrap();
+  .flex.align-items.flex-start();
 }
 // #endregion Mixins: Flex
 
@@ -236,16 +241,36 @@ html, body {
 // #endregion Mixins: Fonts
 
 // #region Variables
-@lgray1: #e8ebee;
-@lgray2: #f2f2f2;
-@lgray3: #dedede;
+@gray1: #e8ebee;
+@gray2: #f2f2f2;
+@gray3: #dedede;
 // #endregion Variables
 
 body {
   .width.full();
   .font.family();
-  font-size: 1.5rem;
-  padding: 3rem 5rem;
+
+  @media (max-width: 499px) {
+    min-width: 400px;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+  }
+
+  @media (min-width: 500px) {
+    font-size: 1.25rem;
+    padding: 1.5rem 2.5rem;
+  }
+
+  @media (min-width: 1000px) {
+    font-size: 1.5rem;
+    padding: 3rem 5rem;
+  }
+
+  @media (min-width: 2000px) {
+    font-size: 2rem;
+    padding: 4rem 6rem;
+  }
+
   padding-bottom: 0;
 }
 
@@ -255,6 +280,8 @@ h1 {
   .font.size.em2_5();
   #title {
     .font.size.em3();
+    .width.full();
+    margin-right: 0.5em;
   }
 }
 h2 {
@@ -281,9 +308,6 @@ h6 {
 
 a {
   text-decoration: none;
-  .font.size.em1_25();
-  .font.weight.bold();
-  color: black;
 }
 
 p {
@@ -297,15 +321,34 @@ hr {
 
 nav {
   .width.full();
-  .flexNav();
-  .flex.justify-content.flex-end();
-  div {
-    width: 40%;
-    .flexNav();
-    // padding-bottom: 1em;
+  min-width: 400px;
+
+  @media (max-width: 499px) {
+    .flexNavSmall();
     a {
-      // padding: 0.5em 0;
+      padding: 1em;
+      text-align: center;
+      border-bottom: 1px solid @gray3;
+      .width.full();
+      &:last-child {
+        border-bottom: none;
+        margin-bottom: -1.5em;
+      }
     }
+  }
+
+  @media (min-width: 500px) {
+    .flexNav();
+    .flex.justify-content.flex-end();
+    a {
+      padding-left: 1.5em;
+    }
+  }
+
+  a {
+    .font.size.em1_25();
+    .font.weight.bold();
+    color: black;
   }
 }
 
@@ -315,14 +358,41 @@ section {
 }
 section#top {
   padding: 2em;
-  background-color: @lgray1;
-  img { .width.full(); }
+  padding-bottom: 3em;
+  background-color: @gray1;
   .border-radius-7_5();
 
-  button {
-    margin-top: 1em;
-    margin-bottom: 1.5em;
-    padding: 0.5em;
+  img { .width.full(); }
+
+  @media (max-width: 849px) {
+    h1 {
+      text-align: center;
+    }
+    h1#title span#hyphen {
+      display: none;
+    }
+    h1#title span#role br {
+      display: inline;
+    }
+    h3 {
+      text-align: center;
+    }
+  }
+  @media (min-width: 850px) {
+    h1#title span#hyphen {
+      display: inline;
+    }
+    h1#title span#role br {
+      display: none;
+    }
+  }
+
+  br {
+    margin-bottom: 2em;
+  }
+
+  a {
+    padding: 0.4em 0.46em;
     background-color: gray;
     color: white;
     .font.size.em1_5();
@@ -331,16 +401,25 @@ section#top {
 }
 section#mid {
   .flexMid();
+  display: grid;
+  @media (max-width: 849px) {
+    grid-template-columns: 1fr;
+  }
+  @media (min-width: 850px) {
+    grid-template-columns: 2fr 1fr;
+  }
+  grid-column-gap: 5vw;
+  grid-row-gap: 5vw;
   div {
-    .width.pct48();
+    .width.full();
   }
   div#items {
     .width.full();
-    border: 1px solid @lgray3;
+    border: 1px solid @gray3;
     .border-radius-7_5();
     .item {
       .width.full();
-      border-bottom: 1px solid @lgray3;
+      border-bottom: 1px solid @gray3;
       padding: 1em;
     }
     .item:last-child {
@@ -352,7 +431,7 @@ section#history {
   table {
     .width.full();
     line-height: 2em;
-    border-top: 1px solid @lgray3;
+    border-top: 1px solid @gray3;
     tr:first-child {
       font-weight: bold;
     }
@@ -365,19 +444,21 @@ section#history {
       }
     }
     tr:nth-child(even) {
-      background-color: @lgray2;
+      background-color: @gray2;
     }
   }
 }
 
 footer {
-  // margin-top: 1.25em;
   height: 5em;
   padding-top: 1em;
   text-align: center;
-  // vertical-align: bottom;
   background-color: gray;
   .font.size.em1();
   .font.weight.bold();
   color: white;
+}
+
+.t-margin-1 {
+  margin-top: 1em;
 }
