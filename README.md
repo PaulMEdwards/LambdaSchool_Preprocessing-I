@@ -47,4 +47,4 @@ Follow these steps for completing your project.
 * [x] Create a link to the portfolio page and create a layout that would allow users to see your work.  A good idea is to link projects back to their github repos so employers can see your code.
 
 # Live Site:
-https://paulmedwards.github.io/LambdaSchool_Preprocessing-I/
+https://paulmedwards.github.io/LambdaSchool_Week04_Preprocessing-I/
