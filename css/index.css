@@ -329,16 +329,26 @@ section#history table {
   line-height: 2em;
   border-top: 1px solid #dedede;
 }
-section#history table tr:first-child {
+section#history table thead tr {
   font-weight: bold;
 }
-section#history table tr td:first-child {
-  font-weight: bold;
-}
-section#history table tr td {
+section#history table thead tr td {
   padding: 0.5em;
 }
-section#history table tr:nth-child(even) {
+section#history table tbody tr {
+  line-height: 2em;
+  border-top: 1px solid #dedede;
+}
+section#history table tbody tr td:first-child {
+  font-weight: bold;
+}
+section#history table tbody tr td {
+  padding: 0.5em;
+}
+section#history table tbody tr::last-child {
+  border: none;
+}
+section#history table tbody tr:nth-child(even) {
   background-color: #f2f2f2;
 }
 footer {
