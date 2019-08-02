@@ -432,19 +432,31 @@ section#history {
     .width.full();
     line-height: 2em;
     border-top: 1px solid @gray3;
-    tr:first-child {
-      font-weight: bold;
-    }
-    tr {
-      td:first-child {
+    thead {
+      tr {
         font-weight: bold;
-      }
-      td {
-        padding: 0.5em;
+        td {
+          padding: 0.5em;
+        }
       }
     }
-    tr:nth-child(even) {
-      background-color: @gray2;
+    tbody {
+      tr {
+        line-height: 2em;
+        border-top: 1px solid @gray3;
+        td:first-child {
+          font-weight: bold;
+        }
+        td {
+          padding: 0.5em;
+        }
+        &::last-child {
+          border: none;
+        }
+      }
+      tr:nth-child(even) {
+        background-color: @gray2;
+      }
     }
   }
 }
