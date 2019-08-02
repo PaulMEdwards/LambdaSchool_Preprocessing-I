@@ -345,7 +345,7 @@ section#history table tbody tr td:first-child {
 section#history table tbody tr td {
   padding: 0.5em;
 }
-section#history table tbody tr::last-child {
+section#history table tbody tr:last-child {
   border: none;
 }
 section#history table tbody tr:nth-child(even) {
